@@ -440,3 +440,26 @@ body {
     opacity: 0;
   }
 }
+
+.style7 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.style9 {font-size: 12px}
+.style10 {font-size: 10px; }
+.style13 {font-size: 12px; font-weight: bold; }
+.style14 {font-size: 14px}
+.style15 {
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+}
+.style16 {font-family: "Times New Roman", Times, serif}
+.style17 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style18 {
+	font-size: 16px;
+	font-weight: bold;
+}

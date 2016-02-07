@@ -3,14 +3,22 @@
   var module = angular.module('hcLogin');
   module.controller(
     'hcLoginController',
-    [function() {
+    ['$http',
+      function(
+      $http
+    ) {
       var vm = this;
-      vm.userName='';
+      vm.email='';
       vm.password='';
 
       vm.signIn = function() {
-        console.log(vm.userName, vm.password);
-      }
+        $http.put('/login', {email: vm.email, password:vm.password}).
+          then(function(successResponse) {
+              console.log("login sucessful");
+          }, function(errorResponse) {
+              console.log('login FAILED');
+          })
+      };
     }
   ]);
 })();

@@ -32,7 +32,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /': 'ViewController.showHomePage'
+  'GET /': 'ViewController.showHomePage',
+  'PUT /login': 'UserController.login'
 
   /***************************************************************************
   *                                                                          *
