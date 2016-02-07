@@ -38,7 +38,7 @@ var jsFilesToInject = [
   'js/src/hcApp.js',
   'js/src/login/hcLogin.js',
   'js/src/login/controllers/hcLoginController.js',
-  'js/**/*.js',
+  'js/**/*.js'
 
   // Use the "exclude" operator to ignore files
   // '!js/ignore/these/files/*.js'
