@@ -22,32 +22,37 @@ module.exports = {
 
       // Compare password attempt from the form params to the encrypted password
       // from the database (`user.password`)
-      require('machinepack-passwords').checkPassword({
-        passwordAttempt: req.param('password'),
-        encryptedPassword: user.encryptedPassword
-      }).exec({
+    //   require('machinepack-passwords').checkPassword({
+    //     passwordAttempt: req.param('password'),
+    //     encryptedPassword: user.encryptedPassword
+    //   }).exec({
 
-        error: function (err){
-          return res.negotiate(err);
-        },
+    //     error: function (err){
+    //       return res.negotiate(err);
+    //     },
 
-        // If the password from the form params doesn't checkout w/ the encrypted
-        // password from the database...
-        incorrect: function (){
-          return res.notFound();
-        },
+    //     // If the password from the form params doesn't checkout w/ the encrypted
+    //     // password from the database...
+    //     incorrect: function (){
+    //       return res.notFound();
+    //     },
 
-        success: function (){
+    //     success: function (){
 
-          // Store user id in the user session
-          req.session.me = user.id;
+    //       // Store user id in the user session
+    //       req.session.me = user.id;
 
-          // All done- let the client know that everything worked.
-          return res.ok();
-        }
-      });
+    //       // All done- let the client know that everything worked.
+    //       return res.ok();
+    //     }
+    //   });
+      var userEnteredPassword = req.param('password');
+      if (userEnteredPassword === user.encryptedPassword) {
+        return res.ok();
+      } else {
+        return res.notFound();
+      }
     });
-
   },
 
   /**
